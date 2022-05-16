@@ -1,7 +1,10 @@
-import React, {Fragment, useState, useEffect} from 'react';
-
+import React, {Fragment, useEffect, useState} from 'react';
+import EditTodo from './EditTodo.component';
+// const todos = [
+//     ['hello friend', 1]
+// ]
 const ListTodos = () => {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(['hello friend']);
     const deleteTodo = async (id) => {
         try {
             await fetch(`http://localhost:5001/todos/${id}`, {
@@ -9,21 +12,21 @@ const ListTodos = () => {
             });
             setTodos(todos.filter(todo => todo.todo_id !== id));
         } catch (err) {
-            console.error(err);
+            console.error(err.message);
         }
     }
     const getTodos = async() => {
         try {
             const response = await fetch('http://localhost:5001/todos');
-            const jsonData = await response.json();
-            setTodos(jsonData);
+            const jsonData = await response.json(); 
+            setTodos(jsonData); 
         } catch (err) {
-            console.error(err);
+            console.error(err.message); 
         }
     }
     useEffect(() => {
         getTodos();
-    }, []);
+    },[]);
     return (
         <Fragment>
             <table>
@@ -37,14 +40,14 @@ const ListTodos = () => {
                 <tbody>
                     {/*
                     <tr>
-                        <td>space 1</td>
-                        <td>space 2</td>
-                        <td>space 3</td>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
                     </tr>
                     */}
                     {todos.map(todo => (
                         <tr key={todo.todo_id}>
-                            <td>{todo.description}</td>
+                            <td>{todo.description}{'temp description'}</td>
                             <td><EditTodo todo={todo}/></td>
                             <td><button onClick={() => {deleteTodo(todo.todo_id)}}>Delete</button></td>
                         </tr>
@@ -53,5 +56,6 @@ const ListTodos = () => {
             </table>
         </Fragment>
     )
-};
+}
+
 export default ListTodos; 

@@ -1,13 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ListTodos from './components/ListTodos.component';
+import InputTodo from './components/Todo.component';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+); 
+root.render(
+  <BrowserRouter>
+    <Routes>
+       <Route path="listTodos" element={<ListTodos />} />
+       <Route path="inputTodos" element={<InputTodo />} />
+    </Routes>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
