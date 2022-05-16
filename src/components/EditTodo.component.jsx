@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react';
+import { EditTodoModalDiv, EditModalContent, EditButton } from './EditTodo.style';
 
 const EditTodo = ({todo}) => {
     const [description, setDescription] = useState(todo.description);
@@ -16,6 +17,7 @@ const EditTodo = ({todo}) => {
                 body: JSON.stringify(body),
                 port: 5432
             });
+            console.log(response); 
             window.location = '/';
         } catch (err) {
             console.error(err); 
