@@ -31,6 +31,7 @@ const InputTodo = () => {
                 />
                 <button>Add Todo</button>
             </form>
+            <p>{description}</p>
         </Fragment>
     )
 };
