@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListTodos from './components/ListTodos.component';
-import InputTodo from './components/Todo.component';
-import './index.css';
+import InputTodo from './components/InputTodo.component';
+import './style/App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -18,7 +18,6 @@ root.render(
     </Routes>
     <App />
   </BrowserRouter>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
