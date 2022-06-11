@@ -1,3 +1,19 @@
+![node-current](https://img.shields.io/node/v/6.9.0)
+# A TODO App / motivation app
+This project is one where each todo item will have an image attached to it to create better memory and easier recognition of 
+what it is you need to do.  Words on a page often are easy to glaze over but images create instant recognition.
+
+On top of that I am building into it the ability to allow for your location to create suggestions based on weather and other things. 
+
+In the end it will be an app to create a visual todo list with geo specific activity suggestions. 
+## Tech deck PERN - 
+Right now I am using React, mostly hooks but have a couple class components for when scraping data from the DOM but may change that later. 
+Also, plan to incorporate Router, Redux, and graphQL. 
+Backend is a simple nodejs server with express but may experiment with GO in a bit. 
+
+### How to help
+Right now I am still figuring out the structure so will come back to this. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
